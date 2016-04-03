@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Favorite Foods</title>
+</head>
+<body>
+  <form name="favorite foods" action="success.html" method="post">
+    <fieldset>
+    <div>
+      <label>Select Your Favorite Food Type:</label>
+      <select name="favfood">
+          <option value="foodtype">Fruits</option>
+          <option value="foodtype">Vegetables</option>
+          <option value="foodtype">Meats</option>
+      </select>
+    </div>
+    <div>
+      <label>Why do you like that food type?</label>
+      <textarea name="textarea" rows="10" cols="40" placeholder="Tell us why you like that food type!"></textarea>
+    </div>
+    <div>
+      <label>How old are you?</label>
+      <input type="number" name="age" min="1" max="100">
+    </div>
+    <div>
+      <label>What is your favorite food?</label>
+      <input type="text" name="favorite_food">
+    </div>
+    <div>
+      <label>Are you a human?</label>
+      <input type="checkbox" name="human" value="agree">I am a human.
+    </div>
+  </fieldset>
+  <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
