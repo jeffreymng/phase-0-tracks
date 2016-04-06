@@ -13,3 +13,11 @@ section#contact-info p{
 .accomplishments{
   font-size: .8em;
 }
+
+.accomplishments:hover{
+  color:red;
+}
+
+section section{
+  color: green;
+}
