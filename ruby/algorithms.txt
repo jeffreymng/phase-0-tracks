@@ -17,3 +17,29 @@ Algorithm for elevator robot
     When human input floor number is reached, press door open button and say "Have a nice day!"
 
 
+Algorithm for driving a manual transmission car.
+-Open car door of driver's side
+-Sit in driver's seat
+-Put on seatbelt
+-Check mirrors
+-Locate the clutch pedal, brake pedal, and gas pedal
+-Keep left foot on clutch pedal
+-Press down on clutch pedal and brake pedal and start the car
+-Disengage the emergency brake
+-While clutch pedal is pressed down
+  -Shift the car's gear into 1st gear
+  -Take foot off brake pedal and push down on gas pedal
+  -Until rpm reaches 3000 rpm, press foot down
+    -Stop pressing down when rpm reaches 3000
+    -Keep engine at 3000 rpm
+    -Slowly release foot off clutch pedal
+    -When car starts moving, fully release clutch pedal (*rpm will go down and then up as you go faster)
+  -When rpm reaches 3000 rpm
+    -Take foot off gas pedal
+    -Press down on clutch pedal
+    -Shift gear into next consecutive number gear
+    -Press down on gas pedal
+    -Slowly release foot off clutch pedal
+    -When gear catches, fully release clutch pedal
+    -Go faster
+  -Repeat lines 37-44 until you have shifted into gear 6
