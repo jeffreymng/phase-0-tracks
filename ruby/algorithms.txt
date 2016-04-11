@@ -1,0 +1,19 @@
+Algorithm for elevator robot
+-While elevator is empty, remain powered in sleep mode
+  -If an entity enters the elevator, power on
+    -Say: "Are you human?"
+    -If there is no answer within 3 minutes, power down into sleep mode
+    -If answer is no, power down into sleep mode
+    -If answer is yes, say: "Hello human. What floor would you like to go to?"
+    -Listen for human input floor number.
+    -If human input is below current floor number, say "Going down! Please stand clear of the closing doors."
+      -Press exact number of human input floor number.
+      -Press door close button.
+    -If human input is above current floor number, say "Going up! Please stand clear of the closing doors."
+      -Press exact number of human input floor number.
+      -Press door close button.
+    -If human input is current floor number, say "You are currently on this floor. Please choose another floor or walk out."
+      -Until another human input floor number is heard, press on door open button.
+    When human input floor number is reached, press door open button and say "Have a nice day!"
+
+
