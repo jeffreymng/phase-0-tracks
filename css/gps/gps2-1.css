@@ -1,3 +1,28 @@
-body {
+header{
   background-color: red;
+  max-width: 960px;
+  padding: 5px;
 }
+
+.column-1 {
+  background-color: blue;
+  display: inline-block;
+  vertical-align: text-top;
+  width: 49%;
+}
+
+.column-2 {
+  background-color: green;
+  display: inline-block;
+  vertical-align: text-top;
+  width: 49%;
+}
+
+footer {
+  background-color: pink;
+  max-width: 960px;
+  padding: 5px;
+ }
+ article {
+   font-family: Helvetica;
+ }
