@@ -11,21 +11,25 @@ until employees_processed == employee_number
     garlic_bread = gets.chomp.downcase
   puts "Would you like to enroll in the company's health insurance?"
     health_insurance = gets.chomp.downcase
+
   if 2016 - vampire_year == vampire_age
     correct_age = true
   else
     correct_age = false
   end
+
   if garlic_bread == "yes"
     likes_garlic = true
   else
     likes_garlic = false
   end
+
   if health_insurance == "yes"
     sign_up = true
   else
     sign_up = false
   end
+
   user_allergies = nil
   until user_allergies == "done"
     puts "Please name any allergies one at a time. Type 'done' when finished."
