@@ -1,7 +1,7 @@
 puts "How many employees will be processed?"
   employee_number = gets.chomp.to_i
 employees_processed = 0
-until employees_processed == employee_number
+while employees_processed < employee_number
   puts  "What is your name?"
     vampire_name = gets.chomp.downcase
   puts "How old are you? What year were you born?"
