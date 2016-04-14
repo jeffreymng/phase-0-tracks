@@ -3,7 +3,7 @@ puts "How many employees will be processed?"
 employees_processed = 0
 until employees_processed == employee_number
   puts  "What is your name?"
-    vampire_name = gets.chomp
+    vampire_name = gets.chomp.downcase
   puts "How old are you? What year were you born?"
     vampire_age = gets.chomp.to_i
     vampire_year = gets.chomp.to_i
@@ -43,9 +43,9 @@ until employees_processed == employee_number
     puts "Probably a vampire."
   elsif correct_age == false && likes_garlic == false && sign_up == false
     puts "Almost certainly a vampire."
-  elsif vampire_name == "Drake Cula"
+  elsif vampire_name == "drake cula"
     puts "Definitely a vampire."
-  elsif vampire_name == "Tu Fang"
+  elsif vampire_name == "tu fang"
     puts "Definitely a vampire."
   else
     puts "Results inconclusive."
