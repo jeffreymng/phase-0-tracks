@@ -43,9 +43,9 @@ while employees_processed < employee_number
   end
   if correct_age && (likes_garlic || sign_up)
     puts "Probably not a vampire."
-  elsif correct_age == false && (likes_garlic == false || sign_up == false)
+  elsif correct_age != true && (likes_garlic != true || sign_up != true)
     puts "Probably a vampire."
-  elsif correct_age == false && likes_garlic == false && sign_up == false
+  elsif (correct_age != true && likes_garlic != true) && sign_up != true
     puts "Almost certainly a vampire."
   elsif vampire_name == "drake cula"
     puts "Definitely a vampire."
