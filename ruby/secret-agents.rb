@@ -35,3 +35,5 @@ end
 
 p decrypt("bcd")
 p decrypt("afe")
+
+p decrypt(encrypt("swordfish"))
