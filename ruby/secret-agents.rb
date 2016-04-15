@@ -55,3 +55,11 @@ end
 
 # p decrypt(encrypt("swordfish"))
 # This nested call method works because the encrypt method has an implicit return that is not shown that is then used by the decrypt method and then printed out.
+
+# ask user if they want to decrypt or encrypt a password
+# retrieve answer
+# apply conditional logic to use decrypt or encrypt methods based on answer
+# ask user for password
+# retrieve password
+# run decrypt or encrypt method on password
+# based on answer for decrypt or encrypt, print result from password
