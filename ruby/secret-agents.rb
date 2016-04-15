@@ -1,3 +1,10 @@
+# define method to move every letter of a string one letter forward
+# add counter
+# add conditional logic to deal with the letter z
+# advance letter one letter forward if not z
+# advance counter
+# output encrypted phrase
+
 def encrypt(encrypt_phrase)
   loop_counter = 0
   while loop_counter < encrypt_phrase.length
@@ -7,13 +14,23 @@ def encrypt(encrypt_phrase)
     else
       encrypt_phrase[loop_counter] = encrypt_phrase[loop_counter].next
     end
-    loop_counter +=1
+    loop_counter += 1
   end
  encrypt_phrase
 end
 
 p encrypt("abc")
 p encrypt("zed")
+
+# define method to move letters in a string one letter backwards
+# define alphabet
+# add counter
+# define decrypted result to add to
+# add conditional logic for letter a to add z instead
+# compare current letter to alphabet index number and subtract 1
+# add to decrypted result
+# advance counter
+# output decrypted phrase
 
 def decrypt(encoded_phrase)
   alphabet = "abcdefghijklmnopqrstuvwxyz"
