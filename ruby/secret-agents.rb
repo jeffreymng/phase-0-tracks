@@ -19,8 +19,8 @@ def encrypt(encrypt_phrase)
  encrypt_phrase
 end
 
-p encrypt("abc")
-p encrypt("zed")
+# p encrypt("abc")
+# p encrypt("zed")
 
 # define method to move letters in a string one letter backwards
 # define alphabet
@@ -50,7 +50,8 @@ def decrypt(encoded_phrase)
   decrypted_result
 end
 
-p decrypt("bcd")
-p decrypt("afe")
+# p decrypt("bcd")
+# p decrypt("afe")
 
-p decrypt(encrypt("swordfish"))
+# p decrypt(encrypt("swordfish"))
+# This nested call method works because the encrypt method has an implicit return that is not shown that is then used by the decrypt method and then printed out.
