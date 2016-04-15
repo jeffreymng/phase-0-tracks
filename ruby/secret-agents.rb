@@ -58,8 +58,18 @@ end
 
 # ask user if they want to decrypt or encrypt a password
 # retrieve answer
-# apply conditional logic to use decrypt or encrypt methods based on answer
 # ask user for password
 # retrieve password
+# apply conditional logic to use decrypt or encrypt methods based on answer
 # run decrypt or encrypt method on password
 # based on answer for decrypt or encrypt, print result from password
+
+puts "Would you like to encrypt or decrypt a password?"
+encrypt_decrypt = gets.chomp.downcase
+puts "What is the password you would like to #{encrypt_decrypt}?"
+agent_password = gets.chomp
+if encrypt_decrypt == "encrypt"
+  p encrypt(agent_password)
+else
+  p decrypt(agent_password)
+end
