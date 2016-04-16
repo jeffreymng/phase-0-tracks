@@ -11,6 +11,8 @@ def encrypt(encrypt_phrase)
     current_letter = encrypt_phrase[loop_counter]
     if current_letter == "z"
       encrypt_phrase[loop_counter] = "a"
+    elsif current_letter == " "
+      encrypt_phrase[loop_counter] = " "
     else
       encrypt_phrase[loop_counter] = encrypt_phrase[loop_counter].next
     end
@@ -41,6 +43,8 @@ def decrypt(encoded_phrase)
     current_letter = encoded_phrase[loop_counter]
     if current_letter == 'a'
       decrypted_result += 'z'
+    elsif current_letter == " "
+      decrypted_result += " "
     else
       previous_letter = alphabet[current_index - 1]
       decrypted_result += previous_letter
