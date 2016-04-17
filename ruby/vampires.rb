@@ -41,16 +41,16 @@ while employees_processed < employee_number
       user_allergies = "done"
     end
   end
-  if correct_age && (likes_garlic || sign_up)
-    puts "Probably not a vampire."
-  elsif correct_age != true && (likes_garlic != true || sign_up != true)
-    puts "Probably a vampire."
-  elsif (correct_age != true && likes_garlic != true) && sign_up != true
-    puts "Almost certainly a vampire."
-  elsif vampire_name == "drake cula"
+  if vampire_name == "drake cula"
     puts "Definitely a vampire."
   elsif vampire_name == "tu fang"
     puts "Definitely a vampire."
+  elsif correct_age && (likes_garlic || sign_up)
+    puts "Probably not a vampire."
+  elsif (correct_age != true && likes_garlic != true) && sign_up != true
+    puts "Almost certainly a vampire."
+  elsif correct_age != true && (likes_garlic != true || sign_up != true)
+    puts "Probably a vampire."
   else
     puts "Results inconclusive."
   end
