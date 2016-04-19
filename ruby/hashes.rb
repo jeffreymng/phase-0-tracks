@@ -57,6 +57,23 @@ change_key = gets.chomp
   end
 
 puts "What would you like your new #{new_key} to be?"
-designer_applicant[new_key] = gets.chomp
+if new_key == :age || new_key == :phone_number || new_key == :children
+  designer_applicant[new_key] = gets.chomp.to_i
+elsif new_key == :red_favorite || new_key == :feng_shui
+  designer_applicant[new_key] = gets.chomp.downcase
+else
+  designer_applicant[new_key] = gets.chomp
+end
 
+if designer_applicant[:feng_shui] == "yes"
+  designer_applicant[:feng_shui] = true
+else
+  designer_applicant[:feng_shui] = false
+end
+
+if designer_applicant[:red_favorite] == "yes"
+  designer_applicant[:red_favorite] = true
+else
+  designer_applicant[:red_favorite] = false
+end
 p designer_applicant
