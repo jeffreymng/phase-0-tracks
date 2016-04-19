@@ -10,6 +10,8 @@
 # call symbol and change it to new value
 # print hash
 
+designer_applicant = {}
+
 puts "What is your name?"
 designer_applicant[:name] = gets.chomp
 
