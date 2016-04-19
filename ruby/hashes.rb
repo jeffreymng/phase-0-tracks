@@ -10,3 +10,38 @@
 # call symbol and change it to new value
 # print hash
 
+puts "What is your name?"
+designer_applicant[:name] = gets.chomp
+
+puts "How old are you?"
+designer_applicant[:age] = gets.chomp.to_i
+
+puts "What is your address?"
+designer_applicant[:address] = gets.chomp
+
+puts "What is your phone number? (Only numbers, please)"
+designer_applicant[:phone_number] = gets.chomp.to_i
+
+puts "How many children do you have?"
+designer_applicant[:children] = gets.chomp.to_i
+
+puts "What is your preferred decor theme?"
+designer_applicant[:decor_theme] = gets.chomp
+
+puts "Is your favorite color red?"
+designer_applicant[:red_favorite] = gets.chomp.downcase
+  if designer_applicant[:red_favorite] == "yes"
+    designer_applicant[:red_favorite] = true
+  else
+    designer_applicant[:red_favorite] = false
+  end
+
+puts "Do you like feng shui?"
+designer_applicant[:feng_shui] = gets.chomp.downcase
+  if designer_applicant[:feng_shui] == "yes"
+    designer_applicant[:feng_shui] = true
+  else
+    designer_applicant[:feng_shui] = false
+  end
+
+p designer_applicant
