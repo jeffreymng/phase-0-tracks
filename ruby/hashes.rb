@@ -45,3 +45,16 @@ designer_applicant[:feng_shui] = gets.chomp.downcase
   end
 
 p designer_applicant
+
+puts "Is there anything you would like to change? (none if nothing)"
+change_key = gets.chomp
+  if change_key == "none"
+    p designer_applicant
+  else
+    new_key = change_key.to_sym
+  end
+
+puts "What would you like your new #{new_key} to be?"
+designer_applicant[new_key] = gets.chomp
+
+p designer_applicant
