@@ -39,10 +39,13 @@ def alias_manager(name)
   new_alias.join(' ')
 end
 
-#puts "What name would you like to create an alias for?"
-#name = gets.chomp
-#until name == "quit" || name == "Quit"
-#  p alias_manager(name)
-#  name = gets.chomp
-#  puts "What name would you like to create an alias for?"
-#end
+user_quit = false
+until user_quit
+  puts 'What name would you like to create an alias for?'
+  name = gets.chomp
+    if name == 'quit' || name == 'Quit'
+      user_quit = true
+    else
+      p alias_manager(name)
+    end
+end
