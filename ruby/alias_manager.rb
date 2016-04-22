@@ -11,6 +11,8 @@
 # put the letters back together to form a name
 # capitalize the new name
 # provide a user interface that lets a user enter a name and get a fake name back. loop until user types in 'quit'
+# store the real names and the fake names in data structures
+# print all data back using a sentence
 
 def alias_manager(name)
   changed_alias = []
@@ -39,6 +41,8 @@ def alias_manager(name)
   new_alias.join(' ')
 end
 
+all_names = {}
+
 user_quit = false
 until user_quit
   puts 'What name would you like to create an alias for?'
@@ -46,6 +50,12 @@ until user_quit
     if name == 'quit' || name == 'Quit'
       user_quit = true
     else
+      all_names[name] = alias_manager(name)
       p alias_manager(name)
     end
 end
+
+all_names.each do |real_name, fake_name|
+  puts "#{fake_name} is actually #{real_name}!"
+end
+
