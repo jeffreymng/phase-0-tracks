@@ -12,24 +12,23 @@
 # capitalize the new name
 # provide a user interface that lets a user enter a name and get a fake name back. loop until user types in 'quit'
 
-
 def alias_manager(name)
   changed_alias = []
   vowels = 'aeiou'
   consonants = 'bcdfghjklmnpqrstvwxyz'
   original_alias = name.downcase.split(' ').reverse.join(' ').chars
-  original_alias.each do |original_alias|
-    if original_alias.include?('a') || original_alias.include?('e') || original_alias.include?('i') || original_alias.include?('o')
-      vowel_index = vowels.index(original_alias) + 1
+  original_alias.each do |original_character|
+    if ['a', 'e', 'i', 'o'].include?(original_character)
+      vowel_index = vowels.index(original_character) + 1
       changed_alias << vowels[vowel_index]
-    elsif original_alias.include?(' ')
+    elsif original_character.include?(' ')
       changed_alias << ' '
-    elsif original_alias.include?('z')
+    elsif original_character.include?('z')
       changed_alias << 'b'
-    elsif original_alias.include?('u')
+    elsif original_character.include?('u')
       changed_alias << 'a'
     else
-      consonant_index = consonants.index(original_alias) + 1
+      consonant_index = consonants.index(original_character) + 1
       changed_alias << consonants[consonant_index]
     end
   end
@@ -40,4 +39,10 @@ def alias_manager(name)
   new_alias.join(' ')
 end
 
-p alias_manager("Feliciu Torrez")
+#puts "What name would you like to create an alias for?"
+#name = gets.chomp
+#until name == "quit" || name == "Quit"
+#  p alias_manager(name)
+#  name = gets.chomp
+#  puts "What name would you like to create an alias for?"
+#end
