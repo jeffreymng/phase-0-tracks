@@ -17,3 +17,9 @@ end
 nick = Santa.new("gender", "ethnicity")
 nick.speak
 nick.eat_milk_and_cookies("mint chocolate chip")
+santas = []
+santas << Santa.new("male", "Chinese")
+santas << Santa.new("female", "Dutch")
+santas << Santa.new("pangender", "German")
+santas << Santa.new("other", "Czech")
+santas << Santa.new("genderqueer", "Scandinavian")
