@@ -1,4 +1,6 @@
 class Santa
+  attr_reader :age, :ethnicity
+  attr_accessor :gender
 
   def initialize(gender, ethnicity)
     puts "Initializing Santa instance..."
@@ -24,18 +26,6 @@ class Santa
     @reindeer_ranking.rotate!
   end
 
-  def change_gender=(new_gender)
-    @gender = new_gender
-  end
-
-  def age
-    @age
-  end
-
-  def ethnicity
-    @ethnicity
-  end
-
 end
 
 nick = Santa.new("male", "chinese")
@@ -49,6 +39,6 @@ santas << Santa.new("other", "Czech")
 santas << Santa.new("genderqueer", "Scandinavian")
 nick.celebrate_birthday
 nick.get_mad_at
-nick.change_gender = "bigender"
+nick.gender = "bigender"
 p nick.age
 p nick.ethnicity
