@@ -38,7 +38,7 @@ class Santa
 
 end
 
-nick = Santa.new("gender", "ethnicity")
+nick = Santa.new("male", "chinese")
 nick.speak
 nick.eat_milk_and_cookies("mint chocolate chip")
 santas = []
@@ -47,3 +47,8 @@ santas << Santa.new("female", "Dutch")
 santas << Santa.new("pangender", "German")
 santas << Santa.new("other", "Czech")
 santas << Santa.new("genderqueer", "Scandinavian")
+nick.celebrate_birthday
+nick.get_mad_at
+nick.change_gender = "bigender"
+p nick.age
+p nick.ethnicity
