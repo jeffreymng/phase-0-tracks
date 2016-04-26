@@ -6,7 +6,7 @@ class Santa
     puts "Initializing Santa instance..."
     @gender = gender
     @ethnicity = ethnicity
-    @age = 0
+    @age = rand(140)
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
   end
 
@@ -28,17 +28,35 @@ class Santa
 
 end
 
-nick = Santa.new("male", "chinese")
-nick.speak
-nick.eat_milk_and_cookies("mint chocolate chip")
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+
 santas = []
-santas << Santa.new("male", "Chinese")
-santas << Santa.new("female", "Dutch")
-santas << Santa.new("pangender", "German")
-santas << Santa.new("other", "Czech")
-santas << Santa.new("genderqueer", "Scandinavian")
-nick.celebrate_birthday
-nick.get_mad_at
-nick.gender = "bigender"
-p nick.age
-p nick.ethnicity
+
+10.times do
+  santas << Santa.new(example_genders.sample, example_ethnicities.sample)
+end
+
+santas.each {|santa| puts "#{santa} is #{santa.age} years old, is of #{santa.ethnicity} ethnicity, and identifies as #{santa.gender}."}
+
+
+
+
+
+
+#Driver Code:
+#nick = Santa.new("male", "chinese")
+#nick.speak
+#nick.eat_milk_and_cookies("mint chocolate chip")
+#santas = []
+#santas << Santa.new("male", "Chinese")
+#santas << Santa.new("female", "Dutch")
+#santas << Santa.new("pangender", "German")
+#santas << Santa.new("other", "Czech")
+#santas << Santa.new("genderqueer", "Scandinavian")
+#nick.celebrate_birthday
+#nick.get_mad_at
+#nick.gender = "bigender"
+#p nick.age
+#p nick.ethnicity
