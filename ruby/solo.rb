@@ -76,6 +76,7 @@ werewolves.each do |werewolf|
   puts "This werewolf's name is #{werewolf.name}."
   puts "#{werewolf.name} is #{werewolf.age} years old and has #{werewolf.fur_color} fur."
   puts "#{werewolf.name}'s fangs are #{werewolf.fang_size}."
+  werewolf.transform("wolf")
   werewolf.hungry
   werewolf.howl
 end
