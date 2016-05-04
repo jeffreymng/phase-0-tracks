@@ -14,3 +14,19 @@ for (var i = 0; i < colors.length; i++) {
 }
 
 console.log(horseColors);
+
+function Car(color, brand, make, price, used) {
+
+  this.color = color;
+  this.brand = brand;
+  this.make = make;
+  this.price = price;
+  this.used = used;
+  console.log("New car!:", color, brand, make, "price:", price,"used:", used);
+  this.rev = function() {console.log("Vroom Vroom!")};
+}
+
+var anotherCar = new Car("red", "Mazda", "Miata", 40000, true);
+anotherCar.rev();
+var anotherCar2 = new Car("purple", "Honda", "Civic", 15000, false);
+anotherCar2.rev();
