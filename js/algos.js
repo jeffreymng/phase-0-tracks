@@ -60,14 +60,29 @@ function sharePair(object1, object2) {
 
 //Write a function that takes an integer for length, and builds and returns an array of strings of the given length.
 //Create a function that takes an integer as an argument
-  //create an empty array
+  //create an empty array to store words in (wordStorage)
+  //Create a variable for the alphabet
+  //Create a variable to store the newly created word (createdWord)
+  //Create a loop to perform an algorithm based on the given integer
+    //create another loop to generate a random letter from alphabet between 1 and 10 times
+    //Add the randomly generated letter to createdWord
+    //Add the newly created word to array
+    //reset the createdWord variable for next word
+    //return the array
 
 function createWords(wordAmount) {
   var wordStorage = [];
-  var alphabet = ["abcdefghijklmnopqrstuvwxyz"];
-  for (counter = 0; counter < wordAmount; counter++) {
-
+  var alphabet = "abcdefghijklmnopqrstuvwxyz";
+  var createdWord = "";
+  for (var counter = 0; counter < wordAmount; counter++) {
+    for (var letterCount = 0; letterCount < Math.floor(Math.random() * 10) + 1; letterCount++) {
+    var randomLetter = alphabet[Math.floor(Math.random() * 26)];
+    createdWord = createdWord + randomLetter;
+    }
+    wordStorage.push(createdWord);
+    createdWord = "";
   }
+  return wordStorage;
 }
 
 // DRIVER CODE
@@ -75,3 +90,5 @@ console.log(longestPhrase(["long phrase","longest phrase","longer phrase"]));
 console.log(longestPhrase(["Phrase1", "Phrase 9 3/4", "This should be the longest phrase."]));
 console.log(sharePair({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
 console.log(sharePair({name: "Steven", age: 54}, {name: "Tamir", age: 95}));
+console.log(createWords(4));
+console.log(createWords(8));
