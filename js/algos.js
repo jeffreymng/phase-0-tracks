@@ -21,7 +21,57 @@ function longestPhrase(array) {
   return array[phraseLength.indexOf(longestPhrase)];
 }
 
+//Write a function that takes two objects and checks to see if the objects share at least one key-value pair.
+//Return true if there is a key-value match and return false if nothing matches
+//Create arrays for the keys and values of the two objects
+//Use a loop to store keys and values in the arrays
+//Create another loop to compare the two arrays containing the keys of the two objects
+  //If the two keys match, store their respective values (stored in arrays earlier) using their index.
+  //If the values match, return true.
+  //Else return false.
+
+function sharePair(object1, object2) {
+  var key_array1 = [];
+  var value_array1 = [];
+  for (var key in object1) {
+    key_array1.push(key);
+    value_array1.push(object1[key]);
+  }
+  var key_array2 = [];
+  var value_array2 = [];
+  for (var key in object2){
+    key_array2.push(key);
+    value_array2.push(object2[key]);
+  }
+  var value1 = "";
+  var value2 = "";
+  for (var counter = 0; counter < key_array1.length; counter ++) {
+    if (key_array1[counter] == key_array2[counter]) {
+      value1 = value_array1[counter];
+      value2 = value_array2[counter];
+    }
+  }
+    if (value1 == value2) {
+      return true;
+    } else {
+      return false;
+    }
+}
+
+//Write a function that takes an integer for length, and builds and returns an array of strings of the given length.
+//Create a function that takes an integer as an argument
+  //create an empty array
+
+function createWords(wordAmount) {
+  var wordStorage = [];
+  var alphabet = ["abcdefghijklmnopqrstuvwxyz"];
+  for (counter = 0; counter < wordAmount; counter++) {
+
+  }
+}
 
 // DRIVER CODE
 console.log(longestPhrase(["long phrase","longest phrase","longer phrase"]));
-console.log(longestPhrase(["Phrase1", "Phrase 9 3/4", "This should be the longest phrase."]))
+console.log(longestPhrase(["Phrase1", "Phrase 9 3/4", "This should be the longest phrase."]));
+console.log(sharePair({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
+console.log(sharePair({name: "Steven", age: 54}, {name: "Tamir", age: 95}));
