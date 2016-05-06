@@ -10,13 +10,11 @@ function longestPhrase(array) {
   for (var counter = 0; counter < array.length; counter ++) {
     phraseLength.push(array[counter].length);
   }
-  var longestPhrase = "";
+  var longestPhrase = phraseLength[0];
   for (var counter = 0; counter < phraseLength.length; counter ++) {
-    if (phraseLength[counter] > phraseLength[counter + 1]) {
+    if (phraseLength[counter] > longestPhrase) {
       longestPhrase = phraseLength[counter];
-  } else if (phraseLength[counter] < phraseLength[counter + 1]) {
-      longestPhrase = phraseLength[counter + 1];
-  }
+    }
   }
   return array[phraseLength.indexOf(longestPhrase)];
 }
@@ -86,9 +84,16 @@ function createWords(wordAmount) {
 }
 
 // DRIVER CODE
-console.log(longestPhrase(["long phrase","longest phrase","longer phrase"]));
-console.log(longestPhrase(["Phrase1", "Phrase 9 3/4", "This should be the longest phrase."]));
-console.log(sharePair({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
-console.log(sharePair({name: "Steven", age: 54}, {name: "Tamir", age: 95}));
-console.log(createWords(4));
-console.log(createWords(8));
+//console.log(longestPhrase(["long phrase","longest phrase","longer phrase"]));
+//console.log(longestPhrase(["Phrase1", "Phrase 9 3/4", "This should be the longest phrase."])//);
+//console.log(sharePair({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
+//console.log(sharePair({name: "Steven", age: 54}, {name: "Tamir", age: 95}));
+//console.log(createWords(4));
+//console.log(createWords(8));
+
+for (var counter = 0; counter < 10; counter++) {
+  var arrayStorage = (createWords(Math.floor(Math.random() * 10) + 1));
+  console.log(arrayStorage);
+  var phraseStorage = longestPhrase(arrayStorage)
+  console.log(phraseStorage);
+}
