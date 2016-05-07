@@ -4,8 +4,8 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+# uses data/methods from another file
+# require is used for built in methods and modules
 require_relative 'state_data'
 
 class VirusPredictor
@@ -16,6 +16,7 @@ class VirusPredictor
     @population_density = population_density
   end
 
+  # runs the predicted_deaths and speed_of_spread instance methods
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
@@ -23,6 +24,7 @@ class VirusPredictor
 
   private
 
+  # predict deaths using a conditional statement
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
     if @population_density >= 200
@@ -41,6 +43,7 @@ class VirusPredictor
 
   end
 
+  #predicts how fast a virus spreads based on population density
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
