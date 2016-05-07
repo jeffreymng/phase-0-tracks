@@ -92,4 +92,4 @@ end
 
 #=======================================================================
 # Reflection Section
-#
+# The differences came in the way data was stored in the hash. One way used a rocket to store data with a string as the key while the other stored data in a symbol using colons. require_relative uses data or methods in another file which is referred to after writing require_relative while require is used to search for certain modules to use in the program. You can use .each to iterate through a hash to run a method or code block on each key value pair of a hash. Each of the variables in virus_effects was an instance variable and not needed.
