@@ -1,0 +1,54 @@
+1. select * from apples;
+  1|Red Delicious|true|1
+  2|Golden Delicious|false|3
+  3|Gala|true|1
+  4|Granny Smith|false|2
+  5|Fuji|true|1
+  6|Ginger Gold|false|3
+
+2. update apples set organic="true" where color_id=3;
+    select * from apples;
+      1|Red Delicious|true|1
+      2|Golden Delicious|true|3
+      3|Gala|true|1
+      4|Granny Smith|false|2
+      5|Fuji|true|1
+      6|Ginger Gold|true|3
+
+3. select * from apples, colors where apples.color_id = colors.id;
+  1|Red Delicious|true|1|1|red
+  2|Golden Delicious|true|3|3|gold
+  3|Gala|true|1|1|red
+  4|Granny Smith|false|2|2|green
+  5|Fuji|true|1|1|red
+  6|Ginger Gold|true|3|3|gold
+
+4. select apples.name, apples.organic, colors.name from apples join colors on apples.color_id = colors.id;
+  Red Delicious|true|red
+  Golden Delicious|true|gold
+  Gala|true|red
+  Granny Smith|false|green
+  Fuji|true|red
+  Ginger Gold|true|gold
+
+5. delete from apples where organic="false";
+  select * from apples;
+    1|Red Delicious|true|1
+    2|Golden Delicious|true|3
+    3|Gala|true|1
+    5|Fuji|true|1
+    6|Ginger Gold|true|3
+
+select apples.organic, colors.name from apples join colors on apples.color_id = colors.id;
+  true|red
+  true|gold
+  true|red
+  true|red
+  true|gold
+
+select apples.name, colors.name from apples left join colors on apples.color_id = colors.id;
+  Red Delicious|red
+  Golden Delicious|gold
+  Gala|red
+  Fuji|red
+  Ginger Gold|gold
