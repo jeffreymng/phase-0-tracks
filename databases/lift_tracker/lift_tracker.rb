@@ -43,3 +43,29 @@ lifts.execute(create_table_bodypart)
 lifts.execute("INSERT OR IGNORE INTO bodypart (name) VALUES ('upper body');")
 lifts.execute("INSERT OR IGNORE INTO bodypart (name) VALUES ('back');")
 lifts.execute("INSERT OR IGNORE INTO bodypart (name) VALUES ('leg');")
+
+def add_exercise(lifts)
+
+  puts "Date of exercise?"
+    exercise_date = gets.chomp
+  puts "What did you work on? (Enter '1' for upper body, '2' for back, or '3' for legs.)"
+    body_focus = gets.chomp.to_i
+  puts "What exercise did you perform?"
+    exercise = gets.chomp
+  puts "First Set: How many reps?"
+    reps1 = gets.chomp.to_i
+  puts "First Set: How much weight did you use?"
+    weight1 = gets.chomp.to_i
+  puts "Second Set: How many reps?"
+    reps2 = gets.chomp.to_i
+  puts "Second Set: How much weight did you use?"
+    weight2 = gets.chomp.to_i
+  puts "Third Set: How many reps?"
+    reps3 = gets.chomp.to_i
+  puts "Third Set: How much weight did you use?"
+    weight3 = gets.chomp.to_i
+
+  lifts.execute("INSERT INTO lifts (lift_date, bodypart_id, exercise, reps1, weight1, reps2, weight2, reps3, weight3) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", [exercise_date, body_focus, exercise, reps1, weight1, reps2, weight2, reps3, weight3])
+
+end
+
