@@ -205,14 +205,3 @@ until program_end == true
   end
 
 end
-
-
-# DRIVER CODE
-# add_exercise(lifts)
-# lifts_on_date(lifts, "11/11/1111")
-# print_all(lifts)
-# delete(lifts, "11/11/1111", "squats")
-# print_all(lifts)
-# modify(lifts)
-# puts "--------------"
-# print_all(lifts)
