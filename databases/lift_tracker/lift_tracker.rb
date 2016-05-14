@@ -42,7 +42,7 @@ lifts.execute(create_table_lifts)
 lifts.execute(create_table_bodypart)
 lifts.execute("INSERT OR IGNORE INTO bodypart (name) VALUES ('upper body');")
 lifts.execute("INSERT OR IGNORE INTO bodypart (name) VALUES ('back');")
-lifts.execute("INSERT OR IGNORE INTO bodypart (name) VALUES ('leg');")
+lifts.execute("INSERT OR IGNORE INTO bodypart (name) VALUES ('legs');")
 
 def add_exercise(lifts)
 
@@ -84,10 +84,24 @@ def lifts_on_date(lifts, date)
   end
 end
 
+def print_all(lifts)
+  puts "Here is a list of all your lifts."
+  all_lifts = lifts.execute("SELECT * FROM lifts JOIN bodypart ON lifts.bodypart_id = bodypart.id;")
+  all_lifts.each do |lifts|
+    puts "Date: #{lifts['lift_date']}"
+    puts "Body Part Exercised: #{lifts['name']}"
+    puts "Lift: #{lifts['exercise']}"
+    puts "1st Set: #{lifts['reps1']} x #{lifts['weight1']} lbs"
+    puts "2nd Set: #{lifts['reps2']} x #{lifts['weight2']} lbs"
+    puts "3rd Set: #{lifts['reps3']} x #{lifts['weight3']} lbs"
+  end
+end
+
 puts "Welcome to the lift tracker. Please type 'help' for a list of commands or, if you already know the commands, type in the command you would like to execute."
 
 
 
 # DRIVER CODE
 # add_exercise(lifts)
-lifts_on_date(lifts, "11/11/1111")
+# lifts_on_date(lifts, "11/11/1111")
+# print_all(lifts)
