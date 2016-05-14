@@ -12,7 +12,7 @@
 require 'sqlite3'
 
 lifts = SQLite3::Database.new("lifts.db")
-lifts.result_as_hash = true
+lifts.results_as_hash = true
 
 create_table_lifts = <<-SQL
   CREATE TABLE IF NOT EXISTS lifts(
@@ -26,7 +26,7 @@ create_table_lifts = <<-SQL
     weight2 INT,
     reps3 INT,
     weight3 INT,
-    FOREIGN KEY (bodypart_id) REFERENCES bodypart(id),
+    FOREIGN KEY (bodypart_id) REFERENCES bodypart(id)
   );
 SQL
 
@@ -34,9 +34,12 @@ create_table_bodypart = <<-SQL
   CREATE TABLE IF NOT EXISTS bodypart(
     id INTEGER PRIMARY KEY,
     name VARCHAR(255),
-    UNIQUE(name)
+    UNIQUE (name)
   );
-  INSERT OR IGNORE INTO bodypart(name) VALUES("upper body");
-  INSERT OR IGNORE INTO bodypart(name) VALUES("leg");
-  INSERT OR IGNORE INTO bodypart(name) VALUES("back");
 SQL
+
+lifts.execute(create_table_lifts)
+lifts.execute(create_table_bodypart)
+lifts.execute("INSERT OR IGNORE INTO bodypart (name) VALUES ('upper body');")
+lifts.execute("INSERT OR IGNORE INTO bodypart (name) VALUES ('back');")
+lifts.execute("INSERT OR IGNORE INTO bodypart (name) VALUES ('leg');")
