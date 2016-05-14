@@ -165,6 +165,46 @@ end
 
 puts "Welcome to the lift tracker. Please type 'help' for a list of commands or, if you already know the commands, type in the command you would like to execute. Type 'end' to exit."
 
+program_end = false
+
+until program_end == true
+
+  user_input = gets.chomp.downcase
+
+  if user_input == "help"
+    puts "Type 'add' to add an exercise."
+    puts "Type 'date' to see all exercises you performed on a certain date."
+    puts "Type 'print all' to see all your exercises tracked so far."
+    puts "Type 'delete' to delete a certain exercise on a date. Be careful when using delete as this deletes the entry forever and you can not get it back."
+    puts "Type 'modify' to modify a certain exercise on a date."
+  elsif user_input == "end"
+    program_end = true
+  elsif user_input == "add"
+    add_exercise(lifts)
+    puts "Next command?"
+  elsif user_input == "print all"
+    print_all(lifts)
+    puts "Next command?"
+  elsif user_input == "date"
+    puts "What date would you like to see the lifts for? (MM/DD/YYYY)"
+      user_date = gets.chomp
+    lifts_on_date(lifts, user_date)
+    puts "Next command?"
+  elsif user_input == "delete"
+    puts "What is the date of the exercise you would like to delete?"
+      delete_date = gets.chomp
+    puts "What is the exercise you would like to delete?"
+      delete_exercise = gets.chomp
+    delete(lifts, delete_date, delete_exercise)
+    puts "Next command?"
+  elsif user_input == "modify"
+    modify(lifts)
+    puts "Next command?"
+  else
+    puts "That is not a valid input. Please try again."
+  end
+
+end
 
 
 # DRIVER CODE
