@@ -44,7 +44,7 @@ lifts.execute("INSERT OR IGNORE INTO bodypart (name) VALUES ('upper body');")
 lifts.execute("INSERT OR IGNORE INTO bodypart (name) VALUES ('back');")
 lifts.execute("INSERT OR IGNORE INTO bodypart (name) VALUES ('legs');")
 
-def add_exercise(lifts)
+def add_exercise(db)
 
   puts "Date of exercise? (MM/DD/YYYY)"
     exercise_date = gets.chomp
@@ -69,13 +69,13 @@ def add_exercise(lifts)
   puts "Third Set: How many pounds did you use? (Numbers Only)"
     weight3 = gets.chomp.to_i
 
-  lifts.execute("INSERT INTO lifts (lift_date, bodypart_id, exercise, reps1, weight1, reps2, weight2, reps3, weight3) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", [exercise_date, body_focus, exercise, reps1, weight1, reps2, weight2, reps3, weight3])
+  db.execute("INSERT INTO lifts (lift_date, bodypart_id, exercise, reps1, weight1, reps2, weight2, reps3, weight3) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", [exercise_date, body_focus, exercise, reps1, weight1, reps2, weight2, reps3, weight3])
 
 end
 
-def lifts_on_date(lifts, date)
+def lifts_on_date(db, date)
   puts "Here are all your lifts for #{date}."
-  on_date = lifts.execute("SELECT lifts.exercise, lifts.reps1, lifts.weight1, lifts.reps2, lifts.weight2, lifts.reps3, lifts.weight3, bodypart.name FROM lifts JOIN bodypart ON lifts.bodypart_id = bodypart.id WHERE lift_date='#{date}';")
+  on_date = db.execute("SELECT lifts.exercise, lifts.reps1, lifts.weight1, lifts.reps2, lifts.weight2, lifts.reps3, lifts.weight3, bodypart.name FROM lifts JOIN bodypart ON lifts.bodypart_id = bodypart.id WHERE lift_date='#{date}';")
   on_date.each do |lifts|
     puts "Lift: #{lifts['exercise']}"
     puts "1st Set: #{lifts['reps1']} x #{lifts['weight1']} lbs"
@@ -84,9 +84,9 @@ def lifts_on_date(lifts, date)
   end
 end
 
-def print_all(lifts)
+def print_all(db)
   puts "Here is a list of all your lifts."
-  all_lifts = lifts.execute("SELECT * FROM lifts JOIN bodypart ON lifts.bodypart_id = bodypart.id;")
+  all_lifts = db.execute("SELECT * FROM lifts JOIN bodypart ON lifts.bodypart_id = bodypart.id;")
   all_lifts.each do |lifts|
     puts "Date: #{lifts['lift_date']}"
     puts "Body Part Exercised: #{lifts['name']}"
@@ -97,11 +97,17 @@ def print_all(lifts)
   end
 end
 
+def delete(db, date, exercise)
+  db.execute("DELETE FROM lifts WHERE lift_date='#{date}' AND exercise='#{exercise}';")
+end
+
 puts "Welcome to the lift tracker. Please type 'help' for a list of commands or, if you already know the commands, type in the command you would like to execute."
 
 
 
 # DRIVER CODE
 # add_exercise(lifts)
-# lifts_on_date(lifts, "11/11/1111")
+ lifts_on_date(lifts, "11/11/1111")
 # print_all(lifts)
+#delete(lifts, "11/11/1111", "squats")
+#print_all(lifts)
