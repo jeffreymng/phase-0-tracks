@@ -5,3 +5,8 @@
 * Figure out how to print to the console for debugging purposes
 * Learn about functions in jQuery. Look up common built in functions and test them.
 * Go to CodeAcademy and take courses. Skip the courses that I've learned already through research to stay within 2 hour limit
+
+
+## Notes
+
+Documentation was helpful for looking up certain effects and functions. w3schools gave helpful examples. mostly read a lot of w3schools tutorial on jquery. code academy gave helpful examples as well and gave me a chance to try them out
