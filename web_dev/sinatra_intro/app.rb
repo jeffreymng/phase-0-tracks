@@ -71,4 +71,14 @@ get '/add_numbers/:number1/plus/:number2' do
   result.to_s
 end
 
+# Make a route that allows the user to search the database in some way
 
+get '/all_students/:campus' do
+  campus = db.execute("SELECT * FROM students WHERE campus=?", ["#{params[:campus]}".upcase])
+  print = ""
+  campus.each do |student|
+    print << "Name: #{student['name']}<br>"
+    print << "Age: #{student['age']}<br><br>"
+  end
+  print
+end
