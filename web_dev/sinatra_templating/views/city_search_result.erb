@@ -6,8 +6,9 @@
 <body>
   <ul>
     <% @students.each do |student| %>
-      <li><%= student['name'] %>, <%= student['age'] %></li>
+      <li><%= student['name'] %>, <%= student['age'] %>, <%= student['campus'] %></li>
     <% end %>
   </ul>
+  <p>Click <a href="/">here</a> to go back to home</p>
 </body>
 </html>
