@@ -24,4 +24,21 @@ post '/students' do
   redirect '/'
 end
 
+
+# Search database by city
+get '/search' do
+  erb :search
+end
+
+get '/results' do
+  @students = db.execute("SELECT * FROM students where campus=?", [params['campus']])
+  erb :city_search_result
+end
+
+post '/results' do
+  redirect 'city_search_result'
+end
+
+
+
 # add static resources
