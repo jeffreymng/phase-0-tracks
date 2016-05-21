@@ -6,7 +6,12 @@
 <body>
   <p>Select the city of the students you would like to search for.</p>
   <form action="/city_search_result" method="POST">
-    <input type="text" name="campus" placeholder="Campus">
+    <select name="campus">
+         <option value="NYC">New York City</option>
+         <option value="CHI">Chicago</option>
+         <option value="SF">San Francisco</option>
+         <option value="SD">San Diego</option>
+     </select>
     <button type="submit">Submit</button>
   </form>
 </body>
